@@ -39,9 +39,9 @@ let status;
 status = (status = ($.getval("zbstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 const zburlArr = [], zbbodyArr = [],zbhdArr = [],zbcount = ''
 let times = Math.round(Date.now() / 1000)
-var zburl = "https://app.zaaap.cn/points/home/openbox";
+const zburl = "https://app.zaaap.cn/points/home/openbox"
 let zbbody = $.getdata('zbbody')
-var zbhd = "{"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","accessToken":"3020bbd1510b5b742c901a35efdce54a","Content-Type":"multipart/form-data; boundary=----WebKitFormBoundary3jGhv4BApcGsaENa","Origin":"https://activity.zaaap.cn","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148/zealer/3.0.0","Host":"app.zaaap.cn","Referer":"https://activity.zaaap.cn/integral/index.html?token=3020bbd1510b5b742c901a35efdce54a&theme=dark&time=1618803244051","vesioncode":"3.0.0","Accept-Language":"zh-cn","Accept":"application/json, text/plain, */*","Content-Length":"44"}";
+const zbhd = '{"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","accessToken":"3020bbd1510b5b742c901a35efdce54a","Content-Type":"multipart/form-data; boundary=----WebKitFormBoundary3jGhv4BApcGsaENa","Origin":"https://activity.zaaap.cn","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148/zealer/3.0.0","Host":"app.zaaap.cn","Referer":"https://activity.zaaap.cn/integral/index.html?token=3020bbd1510b5b742c901a35efdce54a&theme=dark&time=1618803244051","vesioncode":"3.0.0","Accept-Language":"zh-cn","Accept":"application/json, text/plain, */*","Content-Length":"44"}'
 !(async () => {
   if (typeof $request !== "undefined") {
     await zbck()
