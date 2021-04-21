@@ -44,7 +44,6 @@ const zburlArr = [], zbbodyArr = [],zbhdArr = [],zbcount = ''
 let times = Math.round(Date.now() / 1000)
 let zburl = $.getdata('zburl')
 let zbbody = $.getdata('zbbody')
-#let zbhd = $.getdata('zbhd')
 !(async () => {
   if (typeof $request !== "undefined") {
     await zbck()
