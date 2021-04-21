@@ -8,9 +8,12 @@
 
 打开软件点击右上角“能量”
 点击宝箱即可获取ck
-具体ck寿命多长我也没测试！肯定不会比JB短！
 
-脚本为4小时开启一次宝箱获取能量币，没写签到功能，懒得写
+多账号需要卸载app重新登入新账号，具体自测，退出登入是不行的。
+
+脚本为4小时开启一次宝箱获取能量币
+
+额，新品抽奖和众测， 我试了一下，以小弟我目前的水平，写不出来
 
 能量币可兑换：苹果耳机，充电宝，手机支架等
 
@@ -33,6 +36,7 @@ https://app.zaaap.cn/points/home/openbox url script-request-body https://raw.git
 hostname = app.zaaap.cn
 
 */
+
 const $ = new Env('ZEALER');
 let status;
 status = (status = ($.getval("zbstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
@@ -44,8 +48,8 @@ let zbhd = $.getdata('zbhd')
 !(async () => {
   if (typeof $request !== "undefined") {
     await zbck()
-  } else {zburlArr.push('https://app.zaaap.cn/points/home/openbox')
-    zbhdArr.push({"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","accessToken":"3020bbd1510b5b742c901a35efdce54a","Content-Type":"multipart/form-data; boundary=----WebKitFormBoundary3jGhv4BApcGsaENa","Origin":"https://activity.zaaap.cn","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148/zealer/3.0.0","Host":"app.zaaap.cn","Referer":"https://activity.zaaap.cn/integral/index.html?token=3020bbd1510b5b742c901a35efdce54a&theme=dark&time=1618803244051","vesioncode":"3.0.0","Accept-Language":"zh-cn","Accept":"application/json, text/plain, */*","Content-Length":"44"})
+  } else {zburlArr.push($.getdata('zburl'))
+    zbhdArr.push($.getdata('zbhd'))
     zbbodyArr.push($.getdata('zbbody'))
     let zbcount = ($.getval('zbcount') || '1');
   for (let i = 2; i <= zbcount; i++) {
