@@ -22,6 +22,6 @@ jobs:
                   npm install
             - name: "运行【多多11111111爱运动】"
               run: |
-                  node tpy.js
+                  node zb.js
               env:
                  BARK_PUSH: ${{ secrets.BARK_PUSH }}
