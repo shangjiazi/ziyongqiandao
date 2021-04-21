@@ -5,14 +5,12 @@ on:
     schedule:
         - cron: "30 * * * *"
     watch:
-        types: ddayd1111
+        types: ddayd
 
 jobs:
     build:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
-        env:
-            DDAYD_ddaydCK: ${{ secrets.DDAYD_ddaydCK }}
         steps:
             - uses: actions/checkout@v1
             - name: Use Node.js 12.x
@@ -20,7 +18,6 @@ jobs:
               with:
                   node-version: 12.x
             - name: npm install
-              if: env.DDAYD_ddaydCK
               run: |
                   npm install
             - name: "运行【多多11111111爱运动】"
